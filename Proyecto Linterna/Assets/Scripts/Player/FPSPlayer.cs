@@ -6,6 +6,7 @@ public class FPSPlayer : MonoBehaviour
 {
     public float speed;
     public float powerJump;
+    public LayerMask objects;
     [SerializeField] float gravity;
     public Lamp lamp;
     Rigidbody rb;
@@ -48,6 +49,38 @@ public class FPSPlayer : MonoBehaviour
         else
         {
             lamp.GetLight();
+        }
+    }
+    public void MoveLight()
+    {
+        var owo = Physics.OverlapSphere(lamp.transform.position, lamp.radius, objects);
+        if (owo.Length > 0)
+        {
+            Debug.Log("jsdfjsdf");
+            float d = 10000000;
+            Collider c = owo[0];
+            foreach (var l in owo)
+            {
+                if (Vector3.Distance(l.transform.position, lamp.transform.position) < d)
+                {
+                    d = Vector3.Distance(l.transform.position, lamp.transform.position);
+                    c = l;
+                }
+            }
+            if (c.GetComponent<LightObject>().hasLight)
+            {
+                Debug.Log(c.GetComponent<LightObject>());
+                c.GetComponent<LightObject>().hasLight = false;
+                lamp.GetLight();
+                c.GetComponent<LightObject>().lightobject.SetActive(false);
+            }
+            else
+            {
+                c.GetComponent<LightObject>().hasLight = true;
+                lamp.GiveLight();
+                c.GetComponent<LightObject>().lightobject.SetActive(true);
+            }
+
         }
     }
 }

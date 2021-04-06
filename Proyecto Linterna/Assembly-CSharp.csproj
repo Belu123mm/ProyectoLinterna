@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\FSM\BaseState.cs" />
      <Compile Include="Assets\Scripts\FSM\FSM.cs" />
      <Compile Include="Assets\Scripts\Lamp.cs" />
+     <Compile Include="Assets\Scripts\LightObject.cs" />
      <Compile Include="Assets\Scripts\Player\FPSController.cs" />
      <Compile Include="Assets\Scripts\Player\FPSPlayer.cs" />
      <None Include="Assets\PP Depth.shader" />
@@ -72,20 +73,20 @@
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>D:/Documentos/3 cuatrimestre/Diseño de juegos/ProyectoLinterna/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/2019.2.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

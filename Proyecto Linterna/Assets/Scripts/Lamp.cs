@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lamp : MonoBehaviour
 {
     public bool hasLight;
+    public float radius;
     public GameObject lightobject;
     public void GiveLight()
     {

@@ -25,32 +25,42 @@ public class FPSController : MonoBehaviour
         var jump = new BaseState<PlayerStates>();
         var wallJump = new BaseState<PlayerStates>();
         var switchlight = new BaseState<PlayerStates>();
+        var moveLight = new BaseState<PlayerStates>();
 
         //behaviourz
         walk.Execute = Movement;
         jump.OnAwake = Jump;
         wallJump.OnAwake = Jump;
         switchlight.OnAwake = SwitchLight;
+        moveLight.OnAwake = MoveLight;
 
         idle.AddTransition(PlayerStates.walk, walk);
         idle.AddTransition(PlayerStates.jump, jump);
         idle.AddTransition(PlayerStates.wallJump, wallJump);
         idle.AddTransition(PlayerStates.switchlight, switchlight);
+        idle.AddTransition(PlayerStates.moveLight, moveLight);
         walk.AddTransition(PlayerStates.idle, idle);
         walk.AddTransition(PlayerStates.jump, jump);
         walk.AddTransition(PlayerStates.wallJump, wallJump);
         walk.AddTransition(PlayerStates.switchlight, switchlight);
+        walk.AddTransition(PlayerStates.moveLight, moveLight);
         jump.AddTransition(PlayerStates.idle, idle);
         jump.AddTransition(PlayerStates.walk, walk);
         jump.AddTransition(PlayerStates.wallJump, wallJump);
         jump.AddTransition(PlayerStates.switchlight, switchlight);
+        jump.AddTransition(PlayerStates.moveLight, moveLight);
         wallJump.AddTransition(PlayerStates.idle, idle);
         wallJump.AddTransition(PlayerStates.walk, walk);
         wallJump.AddTransition(PlayerStates.switchlight, switchlight);
+        wallJump.AddTransition(PlayerStates.moveLight, moveLight);
         switchlight.AddTransition(PlayerStates.idle, idle);
         switchlight.AddTransition(PlayerStates.jump, jump);
         switchlight.AddTransition(PlayerStates.walk, walk);
         switchlight.AddTransition(PlayerStates.wallJump, wallJump);
+        moveLight.AddTransition(PlayerStates.idle, idle);
+        moveLight.AddTransition(PlayerStates.jump, jump);
+        moveLight.AddTransition(PlayerStates.walk, walk);
+        moveLight.AddTransition(PlayerStates.wallJump, wallJump);
 
         _fsm = new FSM<PlayerStates>(idle);
 
@@ -95,13 +105,20 @@ public class FPSController : MonoBehaviour
                 _fsm.Transition(PlayerStates.idle);
             }
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("owo");
             if (_fsm.CanTransicion(PlayerStates.switchlight))
             {
                 Debug.Log("owo2");
                 _fsm.Transition(PlayerStates.switchlight);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (_fsm.CanTransicion(PlayerStates.moveLight))
+            {
+                _fsm.Transition(PlayerStates.moveLight);
             }
         }
 
@@ -134,6 +151,10 @@ public class FPSController : MonoBehaviour
     void SwitchLight()
     {
         player.SwitchLamp();
+    }
+    void MoveLight()
+    {
+        player.MoveLight();
     }
 }
 
