@@ -49,5 +49,6 @@ public enum PlayerStates
     idle,
     walk,
     jump,
-    wallJump
+    wallJump,
+    switchlight
 }

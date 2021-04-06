@@ -7,6 +7,7 @@ public class FPSPlayer : MonoBehaviour
     public float speed;
     public float powerJump;
     [SerializeField] float gravity;
+    public Lamp lamp;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,16 @@ public class FPSPlayer : MonoBehaviour
         rotateCameraVector3.y += x;
 
         //rb.MoveRotation(Quaternion.Euler(rotateCameraVector3));
+    }
+    public void SwitchLamp()
+    {
+        if (lamp.hasLight)
+        {
+            lamp.GiveLight();
+        }
+        else
+        {
+            lamp.GetLight();
+        }
     }
 }

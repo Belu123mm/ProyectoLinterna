@@ -24,23 +24,33 @@ public class FPSController : MonoBehaviour
         var walk = new BaseState<PlayerStates>();
         var jump = new BaseState<PlayerStates>();
         var wallJump = new BaseState<PlayerStates>();
+        var switchlight = new BaseState<PlayerStates>();
 
         //behaviourz
         walk.Execute = Movement;
         jump.OnAwake = Jump;
         wallJump.OnAwake = Jump;
+        switchlight.OnAwake = SwitchLight;
 
         idle.AddTransition(PlayerStates.walk, walk);
         idle.AddTransition(PlayerStates.jump, jump);
         idle.AddTransition(PlayerStates.wallJump, wallJump);
+        idle.AddTransition(PlayerStates.switchlight, switchlight);
         walk.AddTransition(PlayerStates.idle, idle);
         walk.AddTransition(PlayerStates.jump, jump);
         walk.AddTransition(PlayerStates.wallJump, wallJump);
+        walk.AddTransition(PlayerStates.switchlight, switchlight);
         jump.AddTransition(PlayerStates.idle, idle);
         jump.AddTransition(PlayerStates.walk, walk);
         jump.AddTransition(PlayerStates.wallJump, wallJump);
+        jump.AddTransition(PlayerStates.switchlight, switchlight);
         wallJump.AddTransition(PlayerStates.idle, idle);
         wallJump.AddTransition(PlayerStates.walk, walk);
+        wallJump.AddTransition(PlayerStates.switchlight, switchlight);
+        switchlight.AddTransition(PlayerStates.idle, idle);
+        switchlight.AddTransition(PlayerStates.jump, jump);
+        switchlight.AddTransition(PlayerStates.walk, walk);
+        switchlight.AddTransition(PlayerStates.wallJump, wallJump);
 
         _fsm = new FSM<PlayerStates>(idle);
 
@@ -76,12 +86,22 @@ public class FPSController : MonoBehaviour
                 _fsm.Transition(PlayerStates.walk);
             }
         }
+
         else
         {
 
             if (_fsm.CanTransicion(PlayerStates.idle))
             {
                 _fsm.Transition(PlayerStates.idle);
+            }
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("owo");
+            if (_fsm.CanTransicion(PlayerStates.switchlight))
+            {
+                Debug.Log("owo2");
+                _fsm.Transition(PlayerStates.switchlight);
             }
         }
 
@@ -110,6 +130,10 @@ public class FPSController : MonoBehaviour
     void Jump()
     {
         player.Jump(wallSensor.GetNormal());
+    }
+    void SwitchLight()
+    {
+        player.SwitchLamp();
     }
 }
 
