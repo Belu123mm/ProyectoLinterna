@@ -33,7 +33,9 @@ public class CharacterModel
     {
         Vector3 rotateCameraVector3 = _character.transform.rotation.eulerAngles;
 
-        rotateCameraVector3.y += x;
+        rotateCameraVector3.x = x;
+
+        _character.transform.Rotate(Vector3.up * x * 50 * Time.deltaTime);
 
     }
     public void MoveCamera(float x, float y)
