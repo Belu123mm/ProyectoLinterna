@@ -8,12 +8,14 @@ public class CharacterModel
     CameraController cameraController;
     Character _character;
     BasicSensor _sensor;
-    public CharacterModel(Character ch, CharacterView view, CameraController cam, BasicSensor groundSensor)
+    Lamp _lamp;
+    public CharacterModel(Character ch, CharacterView view, CameraController cam, BasicSensor groundSensor, Lamp lamp)
     {
         _character = ch;
         _view = view;
         cameraController = cam;
         _sensor = groundSensor;
+        _lamp = lamp;
     }
     public void Start()
     {
@@ -42,13 +44,61 @@ public class CharacterModel
     {
         if (_sensor.CheckIsLayer())
         {
-
-
             _character.rb.velocity = new Vector3(_character.rb.velocity.x, 0, _character.rb.velocity.z);
             _character.rb.AddForce((Vector3.up + _sensor.GetNormal()).normalized * _character.powerJump, ForceMode.Force);
             Debug.Log("jumpp");
 
         }
     }
+    public void Gravity()
+    {
+        if (!_sensor.CheckIsLayer())
+        {
+            _character.rb.AddForce(Vector3.down * _character.gravity, ForceMode.VelocityChange);
+        }
+    }
+    public void SwitchLight()
+    {
+        if (_lamp.hasLight)
+        {
+            _lamp.GiveLight();
+        }
+        else
+        {
+            _lamp.GetLight();
+        }
+    }
+    public void MoveLight()
+    {
 
+        var owo = Physics.OverlapSphere(_lamp.transform.position, _lamp.radius, _lamp.objects);
+        if (owo.Length > 0)
+        {
+            Debug.Log("jsdfjsdf");
+            float d = 10000000;
+            Collider c = owo[0];
+            foreach (var l in owo)
+            {
+                if (Vector3.Distance(l.transform.position, _lamp.transform.position) < d)
+                {
+                    d = Vector3.Distance(l.transform.position, _lamp.transform.position);
+                    c = l;
+                }
+            }
+            if (c.GetComponent<LightObject>().hasLight)
+            {
+                Debug.Log(c.GetComponent<LightObject>());
+                c.GetComponent<LightObject>().hasLight = false;
+                _lamp.GetLight();
+                c.GetComponent<LightObject>().lightobject.SetActive(false);
+            }
+            else
+            {
+                c.GetComponent<LightObject>().hasLight = true;
+                _lamp.GiveLight();
+                c.GetComponent<LightObject>().lightobject.SetActive(true);
+            }
+
+        }
+    }
 }

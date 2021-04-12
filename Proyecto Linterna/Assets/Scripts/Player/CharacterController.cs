@@ -17,10 +17,20 @@ public class CharacterController
         }
         if (Input.GetKeyDown(KeyCode.Space))
             _model.Jump();
-
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("F");
+            _model.SwitchLight();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("Q");
+            _model.MoveLight();
+        }
     }
     public void OnFixedUpdate()
     {
+
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
         _model.Rotate(x);

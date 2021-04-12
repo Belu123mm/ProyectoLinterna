@@ -670,6 +670,8 @@ MonoBehaviour:
   groundsensor: {fileID: 1571431618}
   mouseXSensibility: 1
   mouseYSensibility: 1
+  lamp: {fileID: 1929940913}
+  gravity: 0
 --- !u!4 &539509822
 Transform:
   m_ObjectHideFlags: 0
@@ -2509,6 +2511,9 @@ MonoBehaviour:
   hasLight: 1
   radius: 10
   lightobject: {fileID: 905783447}
+  objects:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1001 &1978830543
 PrefabInstance:
   m_ObjectHideFlags: 0

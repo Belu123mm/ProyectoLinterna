@@ -7,6 +7,7 @@ public class Lamp : MonoBehaviour
     public bool hasLight;
     public float radius;
     public GameObject lightobject;
+    public LayerMask objects;
     public void GiveLight()
     {
         lightobject.SetActive(false);
