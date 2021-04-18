@@ -76,7 +76,6 @@ public class CharacterModel
         var owo = Physics.OverlapSphere(_lamp.transform.position, _lamp.radius, _lamp.objects);
         if (owo.Length > 0)
         {
-            Debug.Log("jsdfjsdf");
             float d = 10000000;
             Collider c = owo[0];
             foreach (var l in owo)
@@ -89,16 +88,13 @@ public class CharacterModel
             }
             if (c.GetComponent<LightObject>().hasLight)
             {
-                Debug.Log(c.GetComponent<LightObject>());
-                c.GetComponent<LightObject>().hasLight = false;
+                c.GetComponent<LightObject>().GiveLight();
                 _lamp.GetLight();
-                c.GetComponent<LightObject>().lightobject.SetActive(false);
             }
             else
             {
-                c.GetComponent<LightObject>().hasLight = true;
+                c.GetComponent<LightObject>().GetLight();
                 _lamp.GiveLight();
-                c.GetComponent<LightObject>().lightobject.SetActive(true);
             }
 
         }
