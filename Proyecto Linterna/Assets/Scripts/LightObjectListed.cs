@@ -6,13 +6,16 @@ public class LightObjectListed : LightObject
 {
     Action OnGet;
     Action OnGive;
+    public ListPuzzleManager puzzleManager;
     public override void GetLight()
     {
         base.GetLight();
+        OnGet();
     }
     public override void GiveLight()
     {
         base.GiveLight();
+        OnGive();
     }
     public void SetGet(Action a)
     {

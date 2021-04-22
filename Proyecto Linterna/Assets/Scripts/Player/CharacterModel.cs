@@ -76,6 +76,7 @@ public class CharacterModel
         var owo = Physics.OverlapSphere(_lamp.transform.position, _lamp.radius, _lamp.objects);
         if (owo.Length > 0)
         {
+
             float d = 10000000;
             Collider c = owo[0];
             foreach (var l in owo)
