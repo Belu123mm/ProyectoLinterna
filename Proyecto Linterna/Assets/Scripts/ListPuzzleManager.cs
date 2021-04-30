@@ -20,7 +20,7 @@ public class ListPuzzleManager : MonoBehaviour
 
     void CheckDoor()    //Cada vez que prende o apaga checkea la puerta
     {
-        int lighton = 0;
+        int lighton = 1;
         foreach (LightObjectListed l in turnonlightobject)
         {
 

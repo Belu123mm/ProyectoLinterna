@@ -17,8 +17,8 @@ TagManager:
   - Floor
   - postprocessing
   - LightObject
-  - 
-  - 
+  - Lamp
+  - Player
   - 
   - 
   - 

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: light
+  m_Name: Lamp Light
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 2
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.49019608}
-    - _EmissionColor: {r: 0.3773585, g: 0.3590084, b: 0.26521894, a: 1}
+    - _Color: {r: 0.6226415, g: 0.6089528, b: 0.3729975, a: 0.49019608}
+    - _EmissionColor: {r: 0.5566038, g: 0.51197046, b: 0.24417052, a: 1}
