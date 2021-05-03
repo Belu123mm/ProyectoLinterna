@@ -27,6 +27,11 @@ public class CharacterController
             Debug.Log("Q");
             _model.MoveLight();
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //agarrar y soltar objeto 
+            _model.GrabSomething();
+        }
     }
     public void OnFixedUpdate()
     {

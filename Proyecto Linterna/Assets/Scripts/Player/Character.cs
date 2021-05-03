@@ -16,9 +16,11 @@ public class Character : MonoBehaviour
     public float mouseYSensibility = 1;
     public Lamp lamp;
     public float gravity;
+    public GameObject grabbedposition;
+    public LayerMask grabbedobjects;
     void Start()
     {
-        _controller = new CharacterController(new CharacterModel(this, view, camController, groundsensor, lamp));
+        _controller = new CharacterController(new CharacterModel(this, view, camController, groundsensor, lamp, grabbedobjects, grabbedposition));
     }
 
     // Update is called once per frame

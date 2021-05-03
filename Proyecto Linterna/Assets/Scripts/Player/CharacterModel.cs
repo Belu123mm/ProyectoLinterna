@@ -5,17 +5,22 @@ using UnityEngine;
 public class CharacterModel
 {
     CharacterView _view;
-    CameraController cameraController;
+    CameraController _cameraController;
     Character _character;
     BasicSensor _sensor;
     Lamp _lamp;
-    public CharacterModel(Character ch, CharacterView view, CameraController cam, BasicSensor groundSensor, Lamp lamp)
+    bool isGrabbing;
+    LayerMask _grabbedObject;
+    GameObject _grabbedposition;
+    public CharacterModel(Character ch, CharacterView view, CameraController cam, BasicSensor groundSensor, Lamp lamp, LayerMask grabbedObject, GameObject grabbedPosition)
     {
         _character = ch;
         _view = view;
-        cameraController = cam;
+        _cameraController = cam;
         _sensor = groundSensor;
         _lamp = lamp;
+        _grabbedObject = grabbedObject;
+        _grabbedposition = grabbedPosition;
     }
     public void Start()
     {
@@ -24,7 +29,7 @@ public class CharacterModel
     }
     public void Movement(float v, float h)
     {
-        Vector3 dir = cameraController.cameraParent.forward * v + cameraController.cameraParent.right * h;
+        Vector3 dir = _cameraController.cameraParent.forward * v + _cameraController.cameraParent.right * h;
         dir.y = 0;
         Vector3 newPos = _character.transform.position;
         _character.rb.MovePosition(newPos + dir.normalized * _character.speed * Time.deltaTime);
@@ -40,7 +45,7 @@ public class CharacterModel
     }
     public void MoveCamera(float x, float y)
     {
-        cameraController.MoveCamera(x * _character.mouseXSensibility, y * _character.mouseYSensibility);
+        _cameraController.MoveCamera(x * _character.mouseXSensibility, y * _character.mouseYSensibility);
     }
     public void Jump()
     {
@@ -99,5 +104,35 @@ public class CharacterModel
             }
 
         }
+    }
+    public void GrabSomething()
+    {
+        Debug.Log("trygrabbing");
+        if (isGrabbing)
+        {
+            Release();
+        }
+        else
+        {
+            Grab();
+        }
+
+    }
+    void Grab()
+    {
+        RaycastHit owo;
+        if (Physics.Raycast(_cameraController.cameraTransform.position, _cameraController.cameraTransform.forward, out owo, Mathf.Infinity, _grabbedObject))
+        {
+            isGrabbing = true;
+            //Poner este objeto como hijo del gameobject
+            owo.transform.SetParent(_grabbedposition.transform);
+            owo.collider.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
+    void Release()
+    {
+        isGrabbing = false;
+        _grabbedposition.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+        _grabbedposition.transform.DetachChildren();
     }
 }
