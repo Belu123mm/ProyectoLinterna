@@ -10,6 +10,7 @@ public class LightObjectListed : LightObject
     public override void GetLight()
     {
         base.GetLight();
+        Debug.Log("Lighted");
         OnGet();
     }
     public override void GiveLight()
