@@ -16,6 +16,7 @@ public class ListPuzzleManager : MonoBehaviour
             l.SetGet(CheckDoor);
             l.SetGive(CheckDoor);
         }
+
     }
 
     void CheckDoor()    //Cada vez que prende o apaga checkea la puerta
