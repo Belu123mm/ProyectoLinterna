@@ -6,6 +6,8 @@ public class ShadowEnemy : MonoBehaviour
 {
     FSM<ShadowStates> _fsm;
     public Transform followed;
+    public float distance;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +32,24 @@ public class ShadowEnemy : MonoBehaviour
         attack.AddTransition(ShadowStates.walk, walk);
 
         _fsm = new FSM<ShadowStates>();
-        _fsm.SetInit(walk);
+        _fsm.SetInit(idle);
 
     }
     // Update is called once per frame
     void Walking()
     {
         var dir = followed.position - transform.position;
-        transform.position += dir.normalized;
+        transform.position += dir.normalized / 10 * speed;
     }
     void Update()
     {
+        if (Vector3.Distance(followed.transform.position, transform.position) < distance)
+        {
+            if (_fsm.CanTransicion(ShadowStates.walk))
+            {
+                _fsm.Transition(ShadowStates.walk);
+            }
+        }
         _fsm.OnUpdate();
     }
 }
