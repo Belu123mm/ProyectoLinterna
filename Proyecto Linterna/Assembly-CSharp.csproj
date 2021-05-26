@@ -68,17 +68,20 @@
     <Compile Include="Assets\Scripts\BasicSensor.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
+    <Compile Include="Assets\Scripts\FSM\AttackState.cs" />
     <Compile Include="Assets\Scripts\FSM\BaseState.cs" />
     <Compile Include="Assets\Scripts\FSM\FSM.cs" />
+    <Compile Include="Assets\Scripts\FSM\IdleState.cs" />
+    <Compile Include="Assets\Scripts\FSM\WalkState.cs" />
     <Compile Include="Assets\Scripts\Lamp.cs" />
     <Compile Include="Assets\Scripts\LightObject.cs" />
     <Compile Include="Assets\Scripts\LightObjectListed.cs" />
     <Compile Include="Assets\Scripts\ListPuzzleManager.cs" />
-    <Compile Include="Assets\Scripts\MazePuzzleManager.cs" />
     <Compile Include="Assets\Scripts\Player\Character.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterModel.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterView.cs" />
+    <Compile Include="Assets\Scripts\ShadowEnemy.cs" />
     <None Include="Assets\PP Depth.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
