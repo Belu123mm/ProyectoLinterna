@@ -8,6 +8,7 @@ public class ShadowEnemy : MonoBehaviour
     public Transform followed;
     public float distance;
     public float speed;
+    public bool isPaused;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,17 @@ public class ShadowEnemy : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                isPaused = false;
+            }
+            else
+            {
+                isPaused = true;
+            }
+        }
         if (Vector3.Distance(followed.transform.position, transform.position) < distance)
         {
             if (_fsm.CanTransicion(ShadowStates.walk))
@@ -50,7 +62,8 @@ public class ShadowEnemy : MonoBehaviour
                 _fsm.Transition(ShadowStates.walk);
             }
         }
-        _fsm.OnUpdate();
+        if (!isPaused)
+            _fsm.OnUpdate();
     }
 }
 public enum ShadowStates

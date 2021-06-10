@@ -18,6 +18,8 @@ public class Character : MonoBehaviour
     public float gravity;
     public GameObject grabbedposition;
     public LayerMask grabbedobjects;
+    public bool isPaused;
+    public GameObject pausePanel;
     void Start()
     {
         _controller = new CharacterController(new CharacterModel(this, view, camController, groundsensor, lamp, grabbedobjects, grabbedposition));
@@ -26,10 +28,31 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _controller.OnUpdate();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                isPaused = false;
+            }
+            else
+            {
+                isPaused = true;
+            }
+        }
+        if (isPaused)
+        {
+            pausePanel.SetActive(true);
+        }
+        else
+        {
+            pausePanel.SetActive(false);
+        }
+        if (!isPaused)
+            _controller.OnUpdate();
     }
     void FixedUpdate()
     {
-        _controller.OnFixedUpdate();
+        if (!isPaused)
+            _controller.OnFixedUpdate();
     }
 }
