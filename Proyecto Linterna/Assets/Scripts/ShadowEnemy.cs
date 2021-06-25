@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShadowEnemy : MonoBehaviour
 {
     FSM<ShadowStates> _fsm;
     public Transform followed;
-    public float distance;
+    public float distanceToFollow;
+    public float distanceToAttack;
     public float speed;
     public bool isPaused;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,8 @@ public class ShadowEnemy : MonoBehaviour
         var attack = new AttackState<ShadowStates>();
 
         walk.Execute = Walking;
+        attack.Execute = () => SceneManager.LoadScene(1);
+        idle.Execute = Idle;
 
 
         idle.AddTransition(ShadowStates.walk, walk);
@@ -41,7 +46,12 @@ public class ShadowEnemy : MonoBehaviour
     {
         var dir = followed.position - transform.position;
         transform.position += dir.normalized / 10 * speed;
+        transform.forward = dir.normalized;
+        anim.SetBool("walking",true);
     }
+    void Idle(){
+anim.SetBool("walking",false);
+    }   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -55,16 +65,35 @@ public class ShadowEnemy : MonoBehaviour
                 isPaused = true;
             }
         }
-        if (Vector3.Distance(followed.transform.position, transform.position) < distance)
+        if (Vector3.Distance(followed.transform.position, transform.position) < distanceToFollow)
         {
             if (_fsm.CanTransicion(ShadowStates.walk))
+                {
+                    _fsm.Transition(ShadowStates.walk);
+                }
+            if (Vector3.Distance(followed.transform.position, transform.position) < distanceToAttack)
             {
-                _fsm.Transition(ShadowStates.walk);
+                if (_fsm.CanTransicion(ShadowStates.attack))
+                {
+                    _fsm.Transition(ShadowStates.attack);
+                }
+                 
+            }
+        } else
+        {
+            if(_fsm.CanTransicion(ShadowStates.idle)){
+                _fsm.Transition(ShadowStates.idle);
             }
         }
         if (!isPaused)
             _fsm.OnUpdate();
     }
+void OnDrawGizmos(){
+    Gizmos.color = Color.blue;
+    Gizmos.DrawWireSphere(transform.position,distanceToFollow);
+Gizmos.color = Color.red;
+Gizmos.DrawWireSphere(transform.position,distanceToAttack);
+}
 }
 public enum ShadowStates
 {
