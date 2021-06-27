@@ -95,12 +95,12 @@ public class CharacterModel
             if (c.GetComponent<LightObject>().hasLight)
             {
                 c.GetComponent<LightObject>().GiveLight();
-                _lamp.GetLight();
+                //_lamp.GetLight();
             }
             else
             {
                 c.GetComponent<LightObject>().GetLight();
-                _lamp.GiveLight();
+                //_lamp.GiveLight();
             }
 
         }
