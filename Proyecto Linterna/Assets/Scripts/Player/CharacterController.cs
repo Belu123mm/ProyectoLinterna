@@ -11,12 +11,8 @@ public class CharacterController
     }
     public void OnUpdate()
     {
-        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
-        {
-            _model.Movement(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-            _model.Jump();
+        
+        
         if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("F");
@@ -41,6 +37,12 @@ public class CharacterController
         _model.Rotate(x);
         //Independientemente de la fsm la camara se tiene que mover
         _model.MoveCamera(x, y);
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        {
+            _model.Movement(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+            _model.Jump();
     }
 }
 

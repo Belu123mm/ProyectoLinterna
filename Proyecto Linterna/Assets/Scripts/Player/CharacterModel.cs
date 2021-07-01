@@ -33,6 +33,7 @@ public class CharacterModel
         dir.y = 0;
         Vector3 newPos = _character.transform.position;
         _character.rb.MovePosition(newPos + dir.normalized * _character.speed * Time.deltaTime);
+
     }
     public void Rotate(float x)
     {
