@@ -23,6 +23,7 @@ public class Character : MonoBehaviour
     void Start()
     {
         _controller = new CharacterController(new CharacterModel(this, view, camController, groundsensor, lamp, grabbedobjects, grabbedposition));
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame

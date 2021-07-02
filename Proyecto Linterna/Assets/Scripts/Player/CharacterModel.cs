@@ -41,7 +41,7 @@ public class CharacterModel
 
         rotateCameraVector3.x = x;
 
-        _character.transform.Rotate(Vector3.up * x * 50 * Time.deltaTime);
+        _character.transform.Rotate(Vector3.up * x * 60 * Time.deltaTime);
 
     }
     public void MoveCamera(float x, float y)
