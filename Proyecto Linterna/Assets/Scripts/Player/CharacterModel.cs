@@ -136,4 +136,7 @@ public class CharacterModel
         _grabbedposition.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
         _grabbedposition.transform.DetachChildren();
     }
+    public void Dash(){
+        _character.rb.AddForce(_character.transform.forward * _character.runImpulse, ForceMode.Impulse);
+    }
 }

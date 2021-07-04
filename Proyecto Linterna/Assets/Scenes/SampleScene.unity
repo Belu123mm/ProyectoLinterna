@@ -17559,6 +17559,7 @@ MonoBehaviour:
   groundsensor: {fileID: 1571431618}
   mouseXSensibility: 1
   mouseYSensibility: 1
+  runImpulse: 5
   lamp: {fileID: 1929940913}
   gravity: 1
   grabbedposition: {fileID: 34342763}

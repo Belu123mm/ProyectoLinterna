@@ -43,6 +43,10 @@ public class CharacterController
         }
         if (Input.GetKeyDown(KeyCode.Space))
             _model.Jump();
+
+        if(Input.GetButtonDown("Fire3")){
+            _model.Dash();
+        }
     }
 }
 

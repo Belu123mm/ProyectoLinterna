@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     public BasicSensor groundsensor;
     public float mouseXSensibility = 1;
     public float mouseYSensibility = 1;
+    public float runImpulse;
     public Lamp lamp;
     public float gravity;
     public GameObject grabbedposition;
