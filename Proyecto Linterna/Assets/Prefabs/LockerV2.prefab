@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431462}
+  - component: {fileID: 4029237664934118438}
   m_Layer: 0
   m_Name: LockerV2
   m_TagString: Untagged
@@ -25,13 +26,26 @@ Transform:
   m_GameObject: {fileID: 103030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.1434, y: 1e-15, z: -11.98}
-  m_LocalScale: {x: 0.55197126, y: 0.55197126, z: 0.55197126}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 482620}
   - {fileID: 460352}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4029237664934118438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9759598, y: 3.9273386, z: 5.6474876}
+  m_Center: {x: -0.39742067, y: 1.4636693, z: 1.3695431}
 --- !u!1 &115652
 GameObject:
   m_ObjectHideFlags: 0
