@@ -52,7 +52,7 @@ public class Character : MonoBehaviour
         if (!isPaused)
             _controller.OnUpdate();
     }
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (!isPaused)
             _controller.OnFixedUpdate();

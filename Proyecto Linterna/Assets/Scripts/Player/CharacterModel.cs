@@ -41,7 +41,7 @@ public class CharacterModel
 
         rotateCameraVector3.x = x;
 
-        _character.transform.Rotate(Vector3.up * x * 60 * Time.deltaTime);
+        _character.transform.Rotate(Vector3.up * x * 50 * Time.deltaTime);
 
     }
     public void MoveCamera(float x, float y)
@@ -136,7 +136,7 @@ public class CharacterModel
         _grabbedposition.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
         _grabbedposition.transform.DetachChildren();
     }
-    public void Dash(){
-        _character.rb.AddForce(_character.transform.forward * _character.runImpulse, ForceMode.Impulse);
+    public void Dash(Vector3 dir){
+        _character.rb.AddForce(dir * _character.runImpulse, ForceMode.Impulse);
     }
 }

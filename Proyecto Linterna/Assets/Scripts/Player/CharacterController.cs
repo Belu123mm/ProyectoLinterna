@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,7 +45,14 @@ public class CharacterController
             _model.Jump();
 
         if(Input.GetButtonDown("Fire3")){
-            _model.Dash();
+            if(Input.GetButton("Horizontal") || Input.GetButton("Vertical")){
+
+            Vector3 dir = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical"));
+            _model.Dash(dir);
+            }else{
+                //_model.Dash(_model.transform.forward);
+            }
+
         }
     }
 }
