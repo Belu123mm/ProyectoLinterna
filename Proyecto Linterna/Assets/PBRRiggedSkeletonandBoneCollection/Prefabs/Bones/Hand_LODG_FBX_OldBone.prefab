@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3410740705552659792}
   - component: {fileID: 2821219360690168724}
   m_Layer: 0
-  m_Name: Hand_LODG_FBXOldBone
+  m_Name: Hand_LODG_FBX_OldBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,7 +476,7 @@ MeshCollider:
   m_GameObject: {fileID: 5842115866848363850}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
