@@ -17,6 +17,6 @@ public class KillZone : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider c){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 }
