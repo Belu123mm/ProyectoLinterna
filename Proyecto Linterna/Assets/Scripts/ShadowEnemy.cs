@@ -45,7 +45,7 @@ public class ShadowEnemy : MonoBehaviour
     void Walking()
     {
         var dir = followed.position - transform.position;
-        transform.position += dir.normalized / 10 * speed;
+        transform.position += dir.normalized / 10 * speed * Time.deltaTime;
         transform.forward = dir.normalized;
         anim.SetBool("walking",true);
     }
