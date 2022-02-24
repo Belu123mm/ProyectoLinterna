@@ -64,57 +64,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bed &amp; Bath Furniture Pack\RunemarkStudio\DarkFantasyKit [Free]\Readme\Parts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\LightningBolt\Editor\LightningBoltEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/archivos de programa/Unity/2019.2.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -306,7 +306,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>E:/ProyectoLinterna-main/Proyecto Linterna/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>G:/GUARDAR NUEVO DISCO/ProyectoLinterna-main/Proyecto Linterna/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>E:/archivos de programa/Unity/2019.2.17f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
