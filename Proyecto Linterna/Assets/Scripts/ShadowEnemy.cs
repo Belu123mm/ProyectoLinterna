@@ -75,7 +75,10 @@ anim.SetBool("walking",false);
             {
                 if (_fsm.CanTransicion(ShadowStates.attack))
                 {
+                    anim.SetBool("attack", true);
                     _fsm.Transition(ShadowStates.attack);
+                    
+
                 }
                  
             }

@@ -3506,7 +3506,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1223207975}
   - component: {fileID: 1223207977}
-  - component: {fileID: 1223207976}
   m_Layer: 11
   m_Name: TvLight
   m_TagString: Untagged
@@ -3529,21 +3528,6 @@ Transform:
   m_Father: {fileID: 484047970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1223207976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223207974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea5472dc4698524cb3bb1c4ddfea74b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasLight: 1
-  lightobject: {fileID: 1435203466}
-  ui: {fileID: 0}
 --- !u!65 &1223207977
 BoxCollider:
   m_ObjectHideFlags: 0
