@@ -20,5 +20,6 @@ public class Screamer : MonoBehaviour
         yield return new WaitForSeconds(screamTime);
         player.SetActive(true);
         screamCamera.SetActive(false);
+        Destroy(this.gameObject);
     }
 }
