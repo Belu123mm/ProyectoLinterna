@@ -24,7 +24,7 @@ public class ShadowEnemy : MonoBehaviour
         var attack = new AttackState<ShadowStates>();
 
         walk.Execute = Walking;
-        attack.Execute = () => SceneManager.LoadScene(1);
+        attack.Execute = () => SceneManager.LoadScene(3);
         idle.Execute = Idle;
 
 
@@ -45,6 +45,7 @@ public class ShadowEnemy : MonoBehaviour
     void Walking()
     {
         var dir = followed.position - transform.position;
+        //dir.z = transform.position.z;
         transform.position += dir.normalized / 10 * speed * Time.deltaTime;
         transform.forward = dir.normalized;
         anim.SetBool("walking",true);
